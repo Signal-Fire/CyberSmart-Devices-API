@@ -1,0 +1,6 @@
+{
+    "name" : "devices-handler",
+    "version" : "1.0.0",
+    "author" : "Henry Pye",
+    "description" : "An API module for Device handling in a Smart Home System"
+}

@@ -1,0 +1,5 @@
+# no config
+config/**
+
+# No node_modules
+node_modules/**

@@ -1,0 +1,22 @@
+{
+  "name": "cybersmart-devices-api",
+  "version": "1.0.0",
+  "description": "A Devices API, for managing all devices in a Smart Home network",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/UniversityGroup/CyberSmart-Devices-API.git"
+  },
+  "author": "The Slackers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UniversityGroup/CyberSmart-Devices-API/issues"
+  },
+  "homepage": "https://github.com/UniversityGroup/CyberSmart-Devices-API#readme",
+  "dependencies": {
+    "npm": "^5.7.1"
+  }
+}

@@ -10,7 +10,7 @@ class Find {
         return new Promise(function(resolve, reject) {
             Device.find({ }, function(err, devices) {
                 if (err || devices === null)
-                    return reject("Unable to find any devices");
+                    return reject("Unable to find any Devices");
 
                 return resolve(devices);
             });
@@ -19,7 +19,12 @@ class Find {
 
     FindById(id) {
         return new Promise(function(resolve, reject) {
+            Device.findById(id, function(err, device) {
+                if (err || device === null)
+                    return reject("Unable to find Device with ID: " + id);
 
+                return resolve(device);
+            });
         });
     }
 

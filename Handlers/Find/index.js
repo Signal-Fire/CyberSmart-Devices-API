@@ -37,7 +37,7 @@ class Find {
                 return resolve(device);
             });
         });
-    }
-}
+    }  
+ }
 
 module.exports = Find;

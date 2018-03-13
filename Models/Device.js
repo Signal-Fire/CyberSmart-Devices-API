@@ -1,9 +1,9 @@
 /*jshint esversion: 6*/
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-var conn = mongoose.createConnection(config.database);
 
 var config = require('../Configuration');
+var conn = mongoose.createConnection(config.database);
 
 var Schema = mongoose.Schema;
 

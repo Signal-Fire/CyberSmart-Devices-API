@@ -30,7 +30,12 @@ class Find {
 
     FindByLocation(location) {
         return new Promise(function(resolve, reject) {
+            Device.find({ location: location }, function(err, device) {
+                if (err || device === null)
+                    return reject("Unable to find Device in: " + location);
 
+                return resolve(device);
+            });
         });
     }
 }

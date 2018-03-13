@@ -2,5 +2,5 @@
     "name" : "device-routes",
     "version" : "1.0.0",
     "author" : "Henry Pye",
-    "description" : "The routes for Devices in the Devices API"
+    "description" : "The routes for updating Devices in the Devices API"
 }

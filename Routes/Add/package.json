@@ -1,0 +1,7 @@
+{
+    "name" : "add-device-routes",
+    "version" : "1.0.0",
+    "author" : "Henry Pye",
+    "main" : "index.js",
+    "description" : "An add module for devices within a Smart Home"
+}

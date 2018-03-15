@@ -6,9 +6,9 @@ class Update {
 
     }
     
-    ChangeState(device) {
+    UpdateStateById(id, state) {
         return new Promise(function(resolve, reject) {
-            Device.findByIdAndUpdate(device._id, { state : device.state }, function(err, result) {
+            Device.findByIdAndUpdate(id, { state : state }, function(err, result) {
                 if (err || result === null)
                     return reject("Unable to change state of device");
 

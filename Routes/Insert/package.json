@@ -1,0 +1,6 @@
+{
+    "name" : "insert-device-routes",
+    "version" : "1.0.0",
+    "author" : "Henry Pye",
+    "description" : "Routes for Devices in a Devices API for a Smart Home"
+}

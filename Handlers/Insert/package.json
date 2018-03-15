@@ -1,0 +1,7 @@
+{
+    "name" : "insert-device-handler",
+    "version" : "1.0.0",
+    "author" : "Henry Pye",
+    "main" : "index.js",
+    "description" : "The insert methods for a Device handling system"
+}

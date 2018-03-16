@@ -1,0 +1,7 @@
+{
+    "name" : "delete-device",
+    "version" : "1.0.0",
+    "author" : "Henry Pye",
+    "main" : "index.js",
+    "description" : "The deletion routes for Devices in a Smart Home system"
+}

@@ -67,6 +67,15 @@ The possible resturns are:
 * `401 - Unauthorized` : This means the request failed and the Devices state was not altered.
 * `500 - Server Error` : This means there was an unexpected crash with the method being called by this controller.
 
+#### Delete
+##### route.post('/delete', function(req, res) 
+This route calls the delete device function in the Delete handler. The possible parameters are:
+* `_id` : The ID of the Device being deleted
+The possible returns are:
+* `200 - OK` - The function executed successfully, resulting in the deletion of a Device.
+* `401 - Unauthorized` : This means the request was unauthorized, meaning something went wrong.
+* `500 - Server Error` : This means something went wrong with the delete function, resulting in a server crash.
+
 ### Handlers
 #### Find
 ##### FindAll()
@@ -93,3 +102,8 @@ If the request succeeds, it will return the created Device.
 ##### UpdateStateById(id, state)
 This method finds a Device given an ID and updates the state. If no Device is found or an error occurs, the request is rejected.
 If the request succeeds, it will return the Device matching the given ID and its updated state.
+
+#### Delete
+##### Device(id)
+This method finds a Device given an ID and deletes it. If there is an error during execution or the result is null, the method fails and is rejected.
+If the method executes correctly, it sets active to false on the given Device.

@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 var route = require('express').Router();
 var Finder = new(require('../../Handlers/Find'))();
 
@@ -15,7 +16,11 @@ route.get('/all', function(req, res) {
 
 route.get('/location', function(req, res) {
     try {
-        Finder.FindByLocation(req.body.location).then()
+        Finder.FindByLocation(req.body.location).then(devices => {
+            res.status(200).send(devices);
+        }).catch(error => {
+            res.status(404).send(error);
+        });        
     } catch (ex) {
         res.status(500).send("{ error: Unexpeced server crash ");
     }

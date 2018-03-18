@@ -15,7 +15,7 @@ const port = 8080;
 app.use('/update', Update_Routes);
 app.use('/find', Find_Routes);
 app.use('/insert', Insert_Routes);
-app.use('/delete', Delete_Rotues);
+app.use('/delete', Delete_Routes);
 
 app.listen(port, ()  => {
     console.log("Devices API, sailing through " + port + ", Braavosian warriors are on our tail!");

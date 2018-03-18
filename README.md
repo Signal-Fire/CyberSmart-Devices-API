@@ -14,7 +14,8 @@ We set out to provide a solution for low-cost home automation. The very first go
 
 ### CyberSmart Related Repositories
 * [Locations API](https://github.com/UniversityGroup/CyberSmart-Locations-API) - For handling of Locations
-* [Devices API](https://github.com/UniversityGroup/CyberSmart-Devices-API) - For the handling of Locations
+* [Devices API](https://github.com/UniversityGroup/CyberSmart-Devices-API) - For the handling of Devices
+* [Mobile App](https://github.com/UniversityGroup/CyberSmart-Mobile-App) - For the Mobile App
 * [Database](https://github.com/UniversityGroup/CyberSmart-DB) - CyberSmart Database
 * [User Interface](https://github.com/UniversityGroup/CyberSmart-React-UI) - CyberSmart User Interface 
 * [Node](https://github.com/UniversityGroup/CyberSmart-Node) - CyberSmart Nodes (Plugs)

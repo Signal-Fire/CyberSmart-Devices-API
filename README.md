@@ -2,8 +2,7 @@
 ###### An API for the managing of Devices in a Smart Home network
 
 ## CyberSmart
-CyberSmart is a system designed to control and manage locations within your home by utilising a range of low cost hardware and Open Source Software solutions. The project was initially started as a University Project. 
-We set out to provide a solution for low-cost home automation. The very first goal of this project was to provide a switch in a browser or in an app, that could control a lamp within the home. This has been achieved using Node for backend Operations, Python scripts for interaction with GPIO pins and Linux based operating systems to run it on. The User Interface has been provided using ReactJS. The project has been designed, utilising Microservices. Each aspect of the system operates as a Microservice.
+CyberSmart is a system designed to control and manage locations within your home by utilising a range of low cost hardware and Open Source Software solutions. This project is being developed as a University Group Project. The goal of this project is to create a low-cost, low-resource, eco-friendly Smart Home System. Our solution to this is to use a RESTful backend sitting on a hub that calls out to RESTful endpoints of nodes on the network, in order to update their state. In turn, each endpoint on the network polls every half an hour with a state update and timestamp. Each aspect of the system has been designed as a Microservice, allowing for interoperability with other systems.
 
 #### A big thanks to the following projects and people, without them, CyberSmart would not be possible.
 * [NodeJS](https://nodejs.org/en/) - For creating a fast, lightweight solution for RESTful web servers! All APIs have been developed in Node. 
@@ -27,6 +26,9 @@ We set out to provide a solution for low-cost home automation. The very first go
 * [Brandon P](https://github.com/brandonjamesparkinson) - App Development
 * [Jafoolly](https://github.com/Jafoolly) - UX & Hardware Design
 * [gilesbain](https://github.com/gilesbain) - AI & Data Analysis
+
+### License
+* [GNU-GPL](https://www.gnu.org/licenses/gpl-3.0.en.html) - Have fun bros!
 
 ## Documentation
 ### Routes

@@ -2,10 +2,30 @@
 ###### An API for the managing of Devices in a Smart Home network
 
 ## CyberSmart
-CyberSmart is a system designed to control devices within your home using a Smart Home style system.
+CyberSmart is a system designed to control and manage Locations within your home by utilising a range of low cost hardware and Open Source Software solutions. The project was initially started as a University Project. 
+We set out to provide a solution for low-cost home automation. The very first goal of this project was to provide a switch, in a browser or in an app, that could control a lamp within the home. This has been achieved using Node for backend Operations, Python scripts for interaction with GPIO pins and Linux based operating systems to run it on. The User Interface has been provided using ReactJS. The project has been designed, utilising Microservices. Each aspect of the system operates as a Microservice.
 
-## Contributors
-[Henry Pye](https://www.github.com/Signal-Fire)
+#### A big thanks to the following projects and people, without them, CyberSmart would not be possible.
+* [NodeJS](https://nodejs.org/en/) - For creating a fast, lightweight solution for RESTful web servers! All APIs have been developed in Node. 
+* [ReactJS](https://reactjs.org/) - For creating an easy to work with UI design solution. The Frontend design has been developed in ReactJS.
+* [Python](https://www.python.org/) - For hardware level interaction (GPIO pins).
+* [Raspberry Pi Foundation](https://www.raspberrypi.org/about/) - For consistently providing great quality hardware at brilliant prices! All CyberSmarts Nodes use the [Raspberry Pi Zero](https://www.raspberrypi.org/products/raspberry-pi-zero/), running [Jessie Pixel Headless](https://www.raspberrypi.org/blog/introducing-pixel/) and the main hub uses a [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
+* [Lubuntu](https://lubuntu.net/) - For creating a neat, lightweight OS solution. The main hub uses Lubuntu.
+
+### CyberSmart Related Repositories
+* [Locations API](https://github.com/UniversityGroup/CyberSmart-Locations-API) - For handling of Locations
+* [Locations API](https://github.com/UniversityGroup/CyberSmart-Locations-API) - For the handling of Locations
+* [Database](https://github.com/UniversityGroup/CyberSmart-DB) - CyberSmart Database
+* [User Interface](https://github.com/UniversityGroup/CyberSmart-React-UI) - CyberSmart User Interface 
+* [Node](https://github.com/UniversityGroup/CyberSmart-Node) - CyberSmart Nodes (Plugs)
+
+### Contributors
+* [The Slackers](https://github.com/UniversityGroup) - Group Name
+* [Signal-Fire](https://www.github.com/Signal-Fire) - Lead Developer
+* [DeanoLingardo](https://github.com/DeanoLingardo) - UI Design & Development
+* [Brandon P](https://github.com/brandonjamesparkinson) - App Development
+* [Jafoolly](https://github.com/Jafoolly) - UX & Hardware Design
+* [gilesbain](https://github.com/gilesbain) - AI & Data Analysis
 
 ## Documentation
 ### Routes

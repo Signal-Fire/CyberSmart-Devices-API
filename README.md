@@ -2,8 +2,8 @@
 ###### An API for the managing of Devices in a Smart Home network
 
 ## CyberSmart
-CyberSmart is a system designed to control and manage Locations within your home by utilising a range of low cost hardware and Open Source Software solutions. The project was initially started as a University Project. 
-We set out to provide a solution for low-cost home automation. The very first goal of this project was to provide a switch, in a browser or in an app, that could control a lamp within the home. This has been achieved using Node for backend Operations, Python scripts for interaction with GPIO pins and Linux based operating systems to run it on. The User Interface has been provided using ReactJS. The project has been designed, utilising Microservices. Each aspect of the system operates as a Microservice.
+CyberSmart is a system designed to control and manage locations within your home by utilising a range of low cost hardware and Open Source Software solutions. The project was initially started as a University Project. 
+We set out to provide a solution for low-cost home automation. The very first goal of this project was to provide a switch in a browser or in an app, that could control a lamp within the home. This has been achieved using Node for backend Operations, Python scripts for interaction with GPIO pins and Linux based operating systems to run it on. The User Interface has been provided using ReactJS. The project has been designed, utilising Microservices. Each aspect of the system operates as a Microservice.
 
 #### A big thanks to the following projects and people, without them, CyberSmart would not be possible.
 * [NodeJS](https://nodejs.org/en/) - For creating a fast, lightweight solution for RESTful web servers! All APIs have been developed in Node. 
@@ -14,7 +14,7 @@ We set out to provide a solution for low-cost home automation. The very first go
 
 ### CyberSmart Related Repositories
 * [Locations API](https://github.com/UniversityGroup/CyberSmart-Locations-API) - For handling of Locations
-* [Locations API](https://github.com/UniversityGroup/CyberSmart-Locations-API) - For the handling of Locations
+* [Devices API](https://github.com/UniversityGroup/CyberSmart-Devices-API) - For the handling of Locations
 * [Database](https://github.com/UniversityGroup/CyberSmart-DB) - CyberSmart Database
 * [User Interface](https://github.com/UniversityGroup/CyberSmart-React-UI) - CyberSmart User Interface 
 * [Node](https://github.com/UniversityGroup/CyberSmart-Node) - CyberSmart Nodes (Plugs)

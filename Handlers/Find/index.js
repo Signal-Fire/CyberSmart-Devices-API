@@ -52,7 +52,7 @@ class Find {
                 .map(line => {
                     var splitLine = line.split(" ");
                     var deviceInfo = {};
-                    deviceInfo.ip = splitLine[1].replace(/[^\w\s]/gi, "");
+                    deviceInfo.ip = splitLine[1].replace('/[^()]', "");
                     deviceInfo.mac = splitLine[3];
                     return deviceInfo;
                 });

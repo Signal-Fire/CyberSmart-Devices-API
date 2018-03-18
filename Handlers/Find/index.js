@@ -47,7 +47,7 @@ class Find {
                 if (stderr) 
                     return reject("Unable to find any devices");
 
-                var deviceList = stdout.split("\n").filter(x => !x.includes("incomplete")).map(line => {
+                var deviceList = stdout.split("\n").filter(x => !x.includes("incomplete") && x.length > 5).map(line => {
                     var splitLine = line.split(" ");
                     var deviceInfo = {};
                     deviceInfo.ip = splitLine[1];

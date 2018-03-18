@@ -38,6 +38,30 @@ class Find {
             });
         });
     }  
+
+    FindConnected() {
+        return new Promise(function(resolve, reject) {
+            var sys = require('util');
+            var exec = require('child_process').exec;
+            var child = exec('arp -ani wlan0', function(err, stdout, stderr) {
+                if (stderr) 
+                    return reject("Unable to find any devices");
+                
+                var deviceInfo = {};
+                var deviceList = [];
+
+                stdout.split("\n").filter(x => !x.includes("incomplete")).forEach(line => {
+                    var splitLine = line.split(" ");
+                    deviceInfo.ip = splitLine[1];
+                    deviceInfo.mac = splitLine[3];
+                    deviceList.push(deviceInfo);
+                    deviceInfo = {};
+                });
+
+                return resolve(deviceList);  
+            });
+        });
+    }
  }
 
 module.exports = Find;

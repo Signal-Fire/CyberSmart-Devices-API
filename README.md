@@ -24,6 +24,18 @@ The possible returns are:
 * `404 - Not Found` : This means the request failed or no Devices were found in the location.
 * `500 - Server Error` : This means something went wrong with the function being called in the controller.
 
+##### route.get('/connected', function(req, res) 
+This route returns all connected Devices. It takes no parameters and returns a list of connected devices.
+The format of the returned items is as follows:
+* `IP`
+    - `String`
+* `MAC`
+    - `String`
+The possible returns are:
+* `200 - OK` : This means Devices were found and have been returned.
+* `404 - Not found` : This means no Devices were found and the request failed.
+* `500 - Server Error` : This means there was a server error during the request, causing the request to fail.
+
 ##### route.get('/:id', function(req, res) 
 This route finds a Device by its ID. It takes on parameter, ID, which must be passed in in the format `/<id>` in the URL.
 The possible returns are:
@@ -91,6 +103,9 @@ If the request succeeds, the Device matching that ID will be returned.
 ##### FindByLocation(location)
 This method searches the database for any Devices in the given location. If no Devices are found or an error occurs, it rejects the request.
 If the request succeeds, all Devices in the location will be returned.
+
+##### FindConnected()
+This method performs the [ARP](https://www.tutorialspoint.com/unix_commands/arp.htm) command in order to resolve the connected devices and their hardware addresses.
 
 #### Insert
 ##### AddDevice(device)

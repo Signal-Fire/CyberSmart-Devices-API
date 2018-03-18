@@ -7,14 +7,26 @@ route.get('/all', function(req, res) {
         Finder.FindAll().then(devices => {
             res.status(200).send(devices);
         }).catch(err => {
-            res.status(404).send("{error : " + err);
+            res.status(404).send("{ error : " + error + " }");
         });
     } catch (ex) {
-        res.status(500).send("{ error: Unexpeced server crash ");
+        res.status(500).send("{ error: " + ex + "}");
     }
 });
 
-route.get('/location', function(req, res) {
+route.get('/connected', function(req, res) {
+    try {
+        Finder.FindConnected().then(connected => {
+            res.status(200).send(connected);
+        }).catch(error => {
+            res.status(404).send("{ error : " + error + " }");
+        });
+    } catch (ex) {
+        res.status(500).send("{ error: " + ex + "}");
+    }
+});
+
+route.get('/in/location', function(req, res) {
     try {
         Finder.FindByLocation(req.body.location).then(devices => {
             res.status(200).send(devices);
@@ -22,7 +34,7 @@ route.get('/location', function(req, res) {
             res.status(404).send(error);
         });        
     } catch (ex) {
-        res.status(500).send("{ error: Unexpeced server crash ");
+        res.status(500).send("{ error: " + ex + "}");
     }
 });
 
@@ -30,12 +42,14 @@ route.get('/:id', function(req, res) {
     try {
         Finder.FindById(req.params.id).then(device => {
             res.status(200).send(device);
-        }).catch(err => {
-            res.status(404).send("{error : " + err);
+        }).catch(error => {
+            res.status(404).send("{ error : " + error + " }");
         });
     } catch (ex) {
-        res.status(500).send("{ error: Unexpeced server crash ");
+        res.status(500).send("{ error: " + ex + "}");
     }
 });
+
+
 
 module.exports = route;

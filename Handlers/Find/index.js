@@ -49,6 +49,7 @@ class Find {
 
                 var deviceList = stdout.split("\n").filter(x => !x.includes("incomplete")).map(line => {
                     var splitLine = line.split(" ");
+                    var deviceInfo = {};
                     deviceInfo.ip = splitLine[1];
                     deviceInfo.mac = splitLine[3];
                     return deviceInfo;

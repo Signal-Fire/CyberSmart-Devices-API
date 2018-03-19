@@ -14,6 +14,7 @@ CyberSmart is a system designed to control and manage locations within your home
 ### CyberSmart Related Repositories
 * [Locations API](https://github.com/UniversityGroup/CyberSmart-Locations-API) - For handling of Locations
 * [Devices API](https://github.com/UniversityGroup/CyberSmart-Devices-API) - For the handling of Devices
+* [Logger API](https://github.com/UniversityGroup/CyberSmart-Logger-API) - For creating logs
 * [Mobile App](https://github.com/UniversityGroup/CyberSmart-Mobile-App) - For the Mobile App
 * [Database](https://github.com/UniversityGroup/CyberSmart-DB) - CyberSmart Database
 * [User Interface](https://github.com/UniversityGroup/CyberSmart-React-UI) - CyberSmart User Interface 

@@ -1,7 +1,8 @@
 /* jshint esversion: 6 */
-var express = require('express');
-var cors = require('cors');
-var app = express();
+var express = require('express'),
+    cors = require('cors'),
+    config = require('./Configuration'),
+    app = express();
 
 var Update_Routes = require('./Routes/Update');
 var Find_Routes = require('./Routes/Find');
@@ -17,6 +18,6 @@ app.use('/find', Find_Routes);
 app.use('/insert', Insert_Routes);
 app.use('/delete', Delete_Routes);
 
-app.listen(port, ()  => {
+app.listen(config.port, ()  => {
     console.log("Devices API, sailing through " + port + ", Braavosian warriors are on our tail!");
 });

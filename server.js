@@ -11,8 +11,6 @@ var Delete_Routes = require('./Routes/Delete');
 
 app.use(cors());
 
-const port = 8080;
-
 app.use('/update', Update_Routes);
 app.use('/find', Find_Routes);
 app.use('/insert', Insert_Routes);

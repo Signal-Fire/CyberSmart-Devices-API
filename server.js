@@ -17,5 +17,5 @@ app.use('/insert', Insert_Routes);
 app.use('/delete', Delete_Routes);
 
 app.listen(config.port, ()  => {
-    console.log("Devices API, sailing through " + port + ", Braavosian warriors are on our tail!");
+    console.log("Devices API, sailing through " + config.port + ", Braavosian warriors are on our tail!");
 });

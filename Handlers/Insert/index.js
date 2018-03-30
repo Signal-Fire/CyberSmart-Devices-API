@@ -11,7 +11,7 @@ class Insert {
             var newDevice = new Device(device);
             newDevice.save(function(err, device) {
                 if (err || device === null) 
-                    return reject("Unable to save device");
+                    return reject(err);
 
                 return resolve(device);
             });

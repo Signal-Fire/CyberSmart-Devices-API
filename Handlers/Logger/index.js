@@ -1,4 +1,5 @@
-var request = require('request');
+var request = require('request'),
+    config = require('../../Configuration');
 
 module.exports = class Logger {
     constructor() {
@@ -9,7 +10,7 @@ module.exports = class Logger {
         if (!message || !createdBy || !id)
             return true;
 
-        request.post({url:config["logger-url"] + '/create/' + id, 
+        request.post({url:config["logger-api"] + '/create/' + id, 
             body: JSON.stringify({
                 message : message,
                 created_by_user : createdBy
@@ -18,8 +19,10 @@ module.exports = class Logger {
                 'Content-Type' : 'application/json'
             }}, 
             function optionalCallback(err, httpResponse, body) {
-                if (err) 
+                if (err) {
                     return false;
+                    
+                }
                 return true;
             });
     }

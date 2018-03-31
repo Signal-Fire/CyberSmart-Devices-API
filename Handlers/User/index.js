@@ -8,17 +8,23 @@ module.exports = class User {
 
     ValidateUser(authorization) {
         return new Promise(function(resolve, reject) {
-            request.get({
-                url : config.users-api + '/find/details',
-                headers : {
+            var web_gubbins = {
+                url: config["users-api"] + '/find/details',
+                headers: {
+                    'Content-Type' : 'application/json',
                     'Authorization' : authorization
                 }
-            }).on('response', response => {
-                console.log(response);
-                return resolve(response);
-            }).on('error', error => {
-                return reject(error);
-            });
+            };
+
+            function callback(error, response, body) {
+                if (!error && !response.statusCode == 200) 
+                    return reject("Unable to find user");
+
+                var info = JSON.parse(body);
+                return resolve(info);
+            }
+            
+            request(web_gubbins, callback);
         });
     }
 }

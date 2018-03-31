@@ -2,15 +2,15 @@
 var route = require('express').Router();
 var Deleter = new(require('../../Handlers/Delete'))();
 
-route.post('/device', function(req, res) {
+route.post('/:id', function(req, res) {
     try {
-        Deleter.Device(req.headers.authorization, req.body._id).then(deleted => {
+        Deleter.Device(req.headers.authorization, req.params.id).then(deleted => {
             res.status(200).send(deleted);
         }).catch(error => {
-            res.status(404).send("{ error : " + error + "}");
+            res.status(400).send({ "error " : error });
         });
     } catch (ex) {
-        res.status(500).send("{ error : " + ex + "}");
+        res.status(500).send({ "error " : ex });
     }
 });
 

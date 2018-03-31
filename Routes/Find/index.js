@@ -43,10 +43,10 @@ route.get('/:id', function(req, res) {
         Finder.FindById(req.params.id).then(device => {
             res.status(200).send(device);
         }).catch(error => {
-            res.status(404).send("{ error : " + error + " }");
+            res.status(404).send({ "error " : error });
         });
     } catch (ex) {
-        res.status(500).send("{ error: " + ex + "}");
+        res.status(500).send({ "error " : ex });
     }
 });
 

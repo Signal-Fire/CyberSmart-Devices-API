@@ -12,9 +12,10 @@ module.exports = class Delete {
             User.ValidateUser(authorization).then(user => {
                 Device.findByIdAndUpdate(id, { active: false }, function(err, result) {
                     if (err || result === null)
-                        return reject("Unable to find or update Device");
+                        return reject("Unable to find or update Device " + err);
 
                         Logger.CreateWithID(id, "Device was deleted", user.id);
+
                         return resolve(result);
                 });
             }).catch(error => {

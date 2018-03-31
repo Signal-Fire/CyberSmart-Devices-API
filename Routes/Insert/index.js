@@ -7,10 +7,10 @@ route.post('/device', function(req, res) {
         Inserter.AddDevice(req.body).then(newDevice => {
             res.status(201).send(newDevice);
         }).catch(error => {
-            res.status(401).send({ 'error ' : error});
+            res.status(401).send({ 'error ' : error });
         });
     } catch (ex) {
-        res.status(500).send(" { error : Unexpected Server Error }");
+        res.status(500).send({ "error " : ex });
     }
 });
 

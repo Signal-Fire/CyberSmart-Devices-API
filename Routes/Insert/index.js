@@ -4,7 +4,7 @@ var Inserter = new(require('../../Handlers/Insert'))();
 
 route.post('/device', function(req, res) {
     try {
-        Inserter.AddDevice(req.body).then(newDevice => {
+        Inserter.AddDevice(req.headers.authorization, req.body).then(newDevice => {
             res.status(201).send(newDevice);
         }).catch(error => {
             res.status(401).send({ 'error ' : error });

@@ -14,7 +14,7 @@ module.exports = class Delete {
                     if (err || result === null)
                         return reject("Unable to find or update Device " + err);
 
-                        Logger.CreateWithID(id, "Device was deleted", user.id);
+                        Logger.CreateWithID(id, "DELETED", user.id);
 
                         return resolve(result);
                 });

@@ -22,7 +22,7 @@ class Insert {
                     return resolve(device);
                 });
             }).catch(error => {
-                return reject(error);
+                return reject("Unable to authenticate");
             });         
         });
     }

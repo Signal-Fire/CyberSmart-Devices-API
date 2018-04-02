@@ -21,6 +21,10 @@ var DeviceSchema = new Schema({
         required: true,
         default: 0
     },
+    address: {
+        type : String,
+        required : true
+    },
     active: {
         type: Boolean,
         required: true,

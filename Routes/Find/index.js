@@ -6,11 +6,11 @@ route.get('/all', function(req, res) {
     try {
         Finder.FindAll().then(devices => {
             res.status(200).send(devices);
-        }).catch(err => {
-            res.status(404).send("{ error : " + error + " }");
+        }).catch(error => {
+            res.status(400).send({ "error" : error });
         });
     } catch (ex) {
-        res.status(500).send("{ error: " + ex + "}");
+        res.status(500).send({ "error" : ex });
     }
 });
 
@@ -19,10 +19,10 @@ route.get('/connected', function(req, res) {
         Finder.FindConnected().then(connected => {
             res.status(200).send(connected);
         }).catch(error => {
-            res.status(404).send("{ error : " + error + " }");
+            res.status(400).send({ "error" : error });
         });
     } catch (ex) {
-        res.status(500).send("{ error: " + ex + "}");
+        res.status(500).send({ "error" : ex });
     }
 });
 
@@ -31,10 +31,10 @@ route.get('/in/location', function(req, res) {
         Finder.FindByLocation(req.body.location).then(devices => {
             res.status(200).send(devices);
         }).catch(error => {
-            res.status(404).send(error);
-        });        
+            res.status(400).send({ "error" : error });
+        });
     } catch (ex) {
-        res.status(500).send("{ error: " + ex + "}");
+        res.status(500).send({ "error" : ex });
     }
 });
 
@@ -43,10 +43,10 @@ route.get('/:id', function(req, res) {
         Finder.FindById(req.params.id).then(device => {
             res.status(200).send(device);
         }).catch(error => {
-            res.status(404).send("{ error : " + error + " }");
+            res.status(400).send({ "error" : error });
         });
     } catch (ex) {
-        res.status(500).send("{ error: " + ex + "}");
+        res.status(500).send({ "error" : ex });
     }
 });
 

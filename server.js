@@ -2,6 +2,7 @@
 var express = require('express'),
     cors = require('cors'),
     config = require('./Configuration'),
+    bodyParser = require('body-parser'),
     app = express();
 
 var Update_Routes = require('./Routes/Update');
@@ -10,6 +11,12 @@ var Insert_Routes = require('./Routes/Insert');
 var Delete_Routes = require('./Routes/Delete');
 
 app.use(cors());
+
+app.use(bodyParser.urlencoded({
+    extended : false
+}));
+
+app.use(bodyParser.json());
 
 app.use('/update', Update_Routes);
 app.use('/find', Find_Routes);

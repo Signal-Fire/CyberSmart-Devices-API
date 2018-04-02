@@ -28,7 +28,7 @@ class Update {
         
                         return resolve("Updated state");
                     });
-                    
+
                 return resolve(result);
             });
         });

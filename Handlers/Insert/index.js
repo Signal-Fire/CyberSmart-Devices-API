@@ -17,7 +17,7 @@ class Insert {
                     if (err || device === null) 
                         return reject(err);
                     
-                    Logger.CreateWithID(id, "CREATED", user.id);
+                    Logger.CreateWithID(device._id, "CREATED", user.id);
 
                     return resolve(device);
                 });

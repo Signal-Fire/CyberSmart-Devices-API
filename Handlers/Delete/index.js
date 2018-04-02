@@ -1,6 +1,4 @@
-var Device = require('../../Models/Device'),
-    User = new(require('../User'))(),
-    Logger = new(require('../Logger'))();
+var Device = require('../../Models/Device');
 
 module.exports = class Delete {
     constructor() {
@@ -9,17 +7,11 @@ module.exports = class Delete {
 
     Device(authorization, id) {
         return new Promise(function(resolve, reject) {
-            User.ValidateUser(authorization).then(user => {
-                Device.findByIdAndUpdate(id, { active: false }, function(err, result) {
-                    if (err || result === null)
-                        return reject("Unable to find or update Device " + err);
+            Device.findByIdAndUpdate(id, { active: false }, function(err, result) {
+                if (err || result === null)
+                    return reject("Unable to find or update Device " + err);
 
-                        Logger.CreateWithID(id, "DELETED", user.id);
-
-                        return resolve(result);
-                });
-            }).catch(error => {
-                return reject(error);
+                    return resolve(result);
             });
         });
     }

@@ -46,17 +46,19 @@ class Find {
             var child = exec('arp -ani wlan0', function(err, stdout, stderr) {
                 if (stderr) 
                     return reject("Unable to find any devices");
-
-                var deviceList = stdout.split("\n")
-                .filter(x => !x.includes("incomplete") && x.length > 5)
-                .map(line => {
-                    var splitLine = line.split(" ");
-                    var deviceInfo = {};
-                    deviceInfo.ip = splitLine[1].replace(/[()]/g, "");
-                    deviceInfo.mac = splitLine[3];
-                    return deviceInfo;
-                });
-
+                try {
+                    var deviceList = stdout.split("\n")
+                    .filter(x => !x.includes("incomplete") && x.length > 5)
+                    .map(line => {
+                        var splitLine = line.split(" ");
+                        var deviceInfo = {};
+                        deviceInfo.ip = splitLine[1].replace(/[()]/g, "");
+                        deviceInfo.mac = splitLine[3];
+                        return deviceInfo;
+                    });
+                } catch (ex) {
+                    return reject("Error");
+                }
                 return resolve(deviceList);  
             });
         });

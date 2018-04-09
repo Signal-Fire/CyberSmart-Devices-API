@@ -56,10 +56,11 @@ class Find {
                         deviceInfo.mac = splitLine[3];
                         return deviceInfo;
                     });
+
+                    return resolve(deviceList);  
                 } catch (ex) {
                     return reject("Error");
-                }
-                return resolve(deviceList);  
+                }                
             });
         });
     }

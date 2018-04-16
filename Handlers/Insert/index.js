@@ -6,7 +6,7 @@ class Insert {
 
     }
 
-    AddDevice(device) {
+    AddDevice(auth, device) {
         return new Promise(function(resolve, reject) {
             var newDevice = new Device(device);
 

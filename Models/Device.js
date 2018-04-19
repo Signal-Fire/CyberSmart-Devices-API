@@ -1,4 +1,3 @@
-/*jshint esversion: 6*/
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 

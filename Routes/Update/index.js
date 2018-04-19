@@ -1,4 +1,3 @@
-/* jshint esversion: 6*/
 var route = require('express').Router();
 var Updater = new(require('../../Handlers/Update'))();
 

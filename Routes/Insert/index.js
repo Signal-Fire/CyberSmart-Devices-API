@@ -1,4 +1,3 @@
-/* jshint esversion: 6*/
 var route = require('express').Router();
 var Inserter = new(require('../../Handlers/Insert'))();
 

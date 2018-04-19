@@ -1,4 +1,3 @@
-/* jshint esversion: 6 */
 var express = require('express'),
     cors = require('cors'),
     config = require('./Configuration'),

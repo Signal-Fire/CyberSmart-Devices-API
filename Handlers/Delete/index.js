@@ -1,4 +1,5 @@
-var Device = require('../../Models/Device');
+var Device = require('../../Models/Device'),
+    Logger = require('../Logger');
 
 module.exports = class Delete {
     constructor() {
@@ -11,6 +12,11 @@ module.exports = class Delete {
                 if (err || result === null)
                     return reject("Unable to find or update Device " + err);
 
+                    Logger.CreateLog({
+                        message : result.name + ' was deleted',
+                        created_by_user : result.created_by_user
+                    });
+                    
                     return resolve(result);
             });
         });

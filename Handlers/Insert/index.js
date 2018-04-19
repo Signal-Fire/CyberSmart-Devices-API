@@ -15,9 +15,10 @@ class Insert {
                         return reject(err);
                     
                     Logger.CreateLog({
-                        message : device.name + ' has been added to the system',
+                        message : 'Added a ' + device.name,
                         created_by_user : device.created_by_user
-                    })
+                    });
+
                     return resolve(device);
                 });      
         });

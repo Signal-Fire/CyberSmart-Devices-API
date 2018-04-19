@@ -22,4 +22,21 @@ module.exports = class Delete {
             });
         });
     }
+
+    DeleteAll() {
+        return new Promise(function(resolve, reject) {
+            Device.remove({}, function(err, result) {
+                if (err || result === null)
+                    return reject("Unable to delete devices");
+
+                    Logger.CreateLog({
+                        message : "Deleted all devices",
+                        created_by_user : "System",
+                        type : "Device"
+                    })
+
+                return resolve(result);
+            })
+        })
+    }
 }

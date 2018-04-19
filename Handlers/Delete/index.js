@@ -14,9 +14,10 @@ module.exports = class Delete {
 
                     Logger.CreateLog({
                         message : result.name + ' was deleted',
-                        created_by_user : result.created_by_user
+                        created_by_user : result.created_by_user,
+                        type : "Device"
                     });
-                    
+
                     return resolve(result);
             });
         });

@@ -1,4 +1,3 @@
-/* jshint esversion: 6 */
 var Device = require('../../Models/Device');
 
 class Find {

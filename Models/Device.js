@@ -1,4 +1,3 @@
-/*jshint esversion: 6*/
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
@@ -16,15 +15,20 @@ var DeviceSchema = new Schema({
         type: String,
         required: true
     },
+    created_by_user : {
+        type : String,
+        required : true
+    },
+    address: {
+        type : String,
+        required : true,
+        default : "0"
+    },
     state: {
         type: Number,
         required: true,
         default: 0
-    },
-    address: {
-        type : String,
-        required : true
-    },
+    },    
     active: {
         type: Boolean,
         required: true,
@@ -32,6 +36,7 @@ var DeviceSchema = new Schema({
     },
     date_added: {
         type: Date,
+        required : true,
         default: Date.now
     }
 });

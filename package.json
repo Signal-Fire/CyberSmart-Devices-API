@@ -17,14 +17,14 @@
   },
   "homepage": "https://github.com/UniversityGroup/CyberSmart-Devices-API#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
     "compression": "^1.7.2",
     "cors": "^2.8.4",
     "express": "^4.16.2",
     "mongoose": "^5.0.10",
-    "npm": "^5.7.1",
-    "request": "^2.85.0"
+    "npm": "^5.7.1"
   },
   "devDependencies": {
     "eslint": "^4.19.1"

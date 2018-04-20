@@ -13,26 +13,26 @@ class Update {
                 if (err || result === null)
                     return reject(err);
 
-                return resolve(result);
-            })        
-        });
-        /*return new Promise(function(resolve, reject) {
-            axios({
-                method: 'POST',
-                url : config["state-url"] + '/changestate',
-                data : {
-                    address : address,
-                    state : deviceState
-                }
-            }).then(res => {
-                if (res.status !== 200)
-                    return reject("State not updated");
+                axios({
+                    method: 'POST',
+                    url : config["state-url"] + '/changestate',
+                    data : {
+                        address : result.address,
+                        state : device.state
+                    }
+                }).then(res => {
+                    if (res.status !== 200)
+                        return reject("State not updated, issue posting");
+    
+                    return resolve("State updated");    
+                }).catch(err => {
+                    return reject(err);
+                }); 
 
-                     
-            }).catch(err => {
-                return reject(err);
-            });
-        });*/
+                return resolve(result);
+            }) 
+                 
+        });
     }
 }
 

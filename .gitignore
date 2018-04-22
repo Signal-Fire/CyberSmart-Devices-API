@@ -6,3 +6,7 @@ node_modules/**
 
 # No DB files
 database/**
+
+node_modules
+
+Configuration

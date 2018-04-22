@@ -1,0 +1,8 @@
+# no config
+Configuration/**
+
+# No node_modules
+node_modules/**
+
+# No DB files
+database/**

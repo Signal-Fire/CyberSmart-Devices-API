@@ -1,0 +1,7 @@
+{
+    "name" : "find-devices",
+    "version" : "1.0.0",
+    "author" : "Henry Pye",
+    "description" : "Find devices routes for a Smart Home system",
+    "main" : "index.js"
+}

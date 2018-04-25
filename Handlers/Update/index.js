@@ -9,7 +9,16 @@ class Update {
 
     UpdateState(device) {
         return new Promise(function(resolve, reject) {
-            axios({
+            Device.findByIdAndUpdate(device.id, { state : device.state }, function(err, result) {
+                if (err || result === null)
+                    return reject(err);
+                
+                //Weird but needed
+                result.state = device.state;
+
+                return resolve(result);
+            });
+            /*axios({
                 method: 'POST',
                 url : config["state-url"] + '/update/state',
                 data : {
@@ -20,17 +29,12 @@ class Update {
                 if (res.status !== 200)
                     return reject("State not updated, issue posting");
                 
-                Device.findByIdAndUpdate(device.id, { state : device.state }, function(err, result) {
-                    if (err || result === null)
-                        return reject(err);
-
-                    return resolve(result);
-                });
+                
 
                 return resolve("State updated");    
             }).catch(err => {
                 return reject(err);
-            });         
+            });      */   
         });
     }
 }

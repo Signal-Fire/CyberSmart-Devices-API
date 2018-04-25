@@ -15,7 +15,7 @@ class Update {
 
                 axios({
                     method: 'POST',
-                    url : config["state-url"] + '/changestate',
+                    url : config["state-url"] + '/update/state',
                     data : {
                         address : result.address,
                         state : device.state

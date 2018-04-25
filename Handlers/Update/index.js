@@ -13,28 +13,25 @@ class Update {
                 if (err || result === null)
                     return reject(err);
                 
-                //Weird but needed
                 result.state = device.state;
 
-                return resolve(result);
+                axios({
+                    method: 'POST',
+                    url : config["state-url"] + '/update/state',
+                    data : {
+                        address : result.address,
+                        state : device.state
+                    }
+                }).then(res => {
+                    if (res.status !== 200)
+                        return reject("State not updated, issue posting");
+                    
+                    return resolve(result);    
+                }).catch(err => {
+                    return reject(err);
+                });   
             });
-            /*axios({
-                method: 'POST',
-                url : config["state-url"] + '/update/state',
-                data : {
-                    address : result.address,
-                    state : device.state
-                }
-            }).then(res => {
-                if (res.status !== 200)
-                    return reject("State not updated, issue posting");
-                
-                
-
-                return resolve("State updated");    
-            }).catch(err => {
-                return reject(err);
-            });      */   
+            
         });
     }
 }

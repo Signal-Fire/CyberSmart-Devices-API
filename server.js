@@ -1,6 +1,7 @@
 var express = require('express'),
     cors = require('cors'),
     config = require('./Configuration'),
+    compression = require('compression'),
     bodyParser = require('body-parser'),
     app = express();
 
@@ -8,6 +9,8 @@ var Update_Routes = require('./Routes/Update');
 var Find_Routes = require('./Routes/Find');
 var Insert_Routes = require('./Routes/Insert');
 var Delete_Routes = require('./Routes/Delete');
+
+app.use(compression());
 
 app.use(cors());
 

@@ -6,7 +6,7 @@ module.exports = new class Delete {
 
     }
 
-    Device(authorization, deleter, id) {
+    Device(authorization, deleter, id) {    
         return new Promise(function(resolve, reject) {
             Device.findByIdAndUpdate(id, { active: false }, function(err, result) {
                 if (err || result === null)

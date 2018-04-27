@@ -1,20 +1,22 @@
 var Device = require('../../Models/Device'),
     Logger = require('../Logger');
 
-module.exports = class Delete {
+module.exports = new class Delete {
     constructor() {
 
     }
 
-    Device(authorization, id) {
+    Device(authorization, deleter, id) {    
         return new Promise(function(resolve, reject) {
             Device.findByIdAndUpdate(id, { active: false }, function(err, result) {
                 if (err || result === null)
                     return reject("Unable to find or update Device " + err);
 
+                    result.active = false;
+
                     Logger.CreateLog({
-                        message : result.name + ' was deleted',
-                        created_by_user : result.created_by_user,
+                        message : result.name + ' was removed',
+                        created_by_user : deleter,
                         type : "Device"
                     });
 

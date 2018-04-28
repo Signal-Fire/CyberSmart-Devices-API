@@ -8,7 +8,6 @@ class Update {
     }
 
     UpdateState(device) {
-        console.log(device);
         return new Promise(function(resolve, reject) {
             Device.findByIdAndUpdate(device.id, { state : device.state }, function(err, result) {
                 if (err || result === null)

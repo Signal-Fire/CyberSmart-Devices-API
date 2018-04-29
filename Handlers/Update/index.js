@@ -9,8 +9,7 @@ class Update {
 
     UpdateState(device) {
         return new Promise(function(resolve, reject) {
-            Device.findByIdAndUpdate(device.id, { state : device.state }, function(err, result) {
-                console.log(err, result);
+            Device.findByIdAndUpdate(device.id, { state : device.state }, function(err, result) {                
                 if (err || result === null)
                     return reject(err);
                 
@@ -30,9 +29,9 @@ class Update {
                     return resolve(result);    
                 }).catch(err => {
                     return reject(err);
-                });   
-            });
-            return resolve(true)
+                });  
+                return resolve(result) 
+            });            
         });
     }
 }

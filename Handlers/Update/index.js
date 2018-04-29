@@ -15,7 +15,7 @@ class Update {
                 
                 result.state = device.state;
 
-                axios({
+                await axios({
                     method: 'POST',
                     url : config["state-url"] + '/update/state',
                     data : {
@@ -30,6 +30,7 @@ class Update {
                 }).catch(err => {
                     return reject(err);
                 });  
+                
                 return resolve(result) 
             });            
         });

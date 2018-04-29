@@ -16,7 +16,7 @@ class Insert {
                         return reject(err);
                     
                     Logger.CreateLog({
-                        message : 'Added a ' + device.name,
+                        message : 'Added a ' + device.name + ' to the ' + device.location,
                         created_by_user : device.created_by_user,
                         type : "Device"
                     });

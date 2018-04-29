@@ -32,6 +32,7 @@ class Update {
                     return reject(err);
                 });   
             });
+            return resolve(true)
         });
     }
 }

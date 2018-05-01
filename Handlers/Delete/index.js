@@ -15,7 +15,7 @@ module.exports = new class Delete {
                     result.active = false;
 
                     Logger.CreateLog({
-                        message : result.name + ' was removed',
+                        message : 'Removed the ' + result.name + ' from the ' + result.location,
                         created_by_user : deleter,
                         type : "Device"
                     });

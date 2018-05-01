@@ -9,13 +9,13 @@ class Update {
 
     UpdateState(device) {
         return new Promise(function(resolve, reject) {
-            Device.findByIdAndUpdate(device.id, { state : device.state }, function(err, result) {
+            Device.findByIdAndUpdate(device.id, { state : device.state }, function(err, result) {                
                 if (err || result === null)
                     return reject(err);
                 
                 result.state = device.state;
 
-                axios({
+                await axios({
                     method: 'POST',
                     url : config["state-url"] + '/update/state',
                     data : {
@@ -29,9 +29,10 @@ class Update {
                     return resolve(result);    
                 }).catch(err => {
                     return reject(err);
-                });   
-            });
-            return reject(false)
+                });  
+                
+                return resolve(result) 
+            });            
         });
     }
 }

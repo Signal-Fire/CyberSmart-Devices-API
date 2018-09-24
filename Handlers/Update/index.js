@@ -15,7 +15,7 @@ class Update {
                 
                 result.state = device.state;
 
-                await axios({
+                axios({
                     method: 'POST',
                     url : config["state-url"] + '/update/state',
                     data : {
